@@ -7,6 +7,7 @@ permalink: community/podcasts.html
 ---
 
 Podcasts dedicated to React and individual podcast episodes with React discussions.
+OKE!
 
 ## Podcasts {#podcasts}
 

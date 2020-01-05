@@ -84,3 +84,7 @@ files:
     source: '/content/404.md'
     translation: '/docs/%locale%/404.md'
     languages_mapping: *anchor
+  -
+    source: '/content/about/*.md'
+    translation: '/docs/%locale%/about/%original_file_name%'
+    languages_mapping: *anchor

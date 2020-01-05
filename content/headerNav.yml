@@ -11,3 +11,6 @@ items:
   - title: Community
     to: /community/support.html
     activeSelector: /community
+  - title: About
+    to: /about/impressum.html
+    activeSelector: /about

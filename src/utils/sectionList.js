@@ -12,6 +12,8 @@ import navDocs from '../../content/docs/nav.yml';
 // $FlowExpectedError
 import navTutorial from '../../content/tutorial/nav.yml';
 
+import navAbout from '../../content/about/nav.yml';
+
 const sectionListDocs = navDocs.map(
   (item: Object): Object => ({
     ...item,
@@ -25,9 +27,16 @@ const sectionListCommunity = navCommunity.map(
     directory: 'community',
   }),
 );
+const sectionListAbout = navAbout.map(
+  (item: Object): Object => ({
+    ...item,
+    directory: 'about',
+  }),
+);
 
 export {
   sectionListCommunity,
   sectionListDocs,
+  sectionListAbout,
   navTutorial as sectionListTutorial,
 };
