@@ -5,17 +5,12 @@ docs:
   title: Docs
 
 more:
-  title: More
+  title: About
   items:
-    - title: Tutorial
-      to: /tutorial/tutorial.html
-    - title: Blog
-      to: /blog
-    - title: Acknowledgements
-      to: /acknowledgements.html
-    - title: React Native
-      to: https://facebook.github.io/react-native/
-      external: true
+    - title: Impressum
+      to: /about/impressum.html
+    - title: Datenschutz
+      to: /about/datenschutz.html
 
 channels:
   title: Channels

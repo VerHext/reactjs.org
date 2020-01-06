@@ -7,12 +7,12 @@ permalink: about/impressum.html
 ---
 ### Verantwortlich im Sinne des § 5 TMG:
 
-Vertretungsberechtigt: Johannes Waigel
-
 **KlexHub UG (haftungsbeschränkt)**
 
 Kurt-Schumacher-Str. 2 <br />
-DE-89343 Jettingen-Scheppach 
+DE-89343 Jettingen-Scheppach
+
+Vorstand: Johannes Waigel
 
 Tel.: +49 (0) 8225 / 79 89 000<br />
 Fax.: +49 (0) 8225 / 79 89 001 <br />

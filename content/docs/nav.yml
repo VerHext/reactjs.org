@@ -10,6 +10,8 @@
       title: CDN Links
     - id: release-channels
       title: Release Channels
+    - id: branding
+      title: Branding
 - title: Main Concepts
   isOrdered: true
   items:

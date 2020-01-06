@@ -17,13 +17,14 @@ import DocSearch from './DocSearch';
 // $FlowFixMe
 import navHeader from '../../../content/headerNav.yml';
 
-import logoSvg from 'icons/logo.svg';
+import logoSvg from 'images/oss_logo.png';
 
 const Header = ({location}: {location: Location}) => (
   <header
     css={{
-      backgroundColor: colors.darker,
-      color: colors.white,
+      backgroundColor: colors.white,
+      color: "#465765",
+      borderBottom: "1px solid #d9d9d9",
       position: 'fixed',
       zIndex: 1,
       width: '100%',
@@ -39,7 +40,7 @@ const Header = ({location}: {location: Location}) => (
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
-          height: 60,
+          height: 70,
           [media.between('small', 'large')]: {
             height: 50,
           },
@@ -68,32 +69,8 @@ const Header = ({location}: {location: Location}) => (
             },
           }}
           to="/">
-          <img src={logoSvg} alt="" height="20" />
-          <span
-            css={{
-              color: 'inherit',
-              marginLeft: 10,
-              fontWeight: 700,
-              fontSize: 20,
-              lineHeight: '20px',
-              [media.lessThan('large')]: {
-                fontSize: 16,
-                marginTop: 1,
-              },
-              [media.lessThan('small')]: {
-                // Visually hidden
-                position: 'absolute',
-                overflow: 'hidden',
-                clip: 'rect(0 0 0 0)',
-                height: 1,
-                width: 1,
-                margin: -1,
-                padding: 0,
-                border: 0,
-              },
-            }}>
-            React
-          </span>
+         
+            <img src="/oss_logo.png" alt="" height="40px" />
         </Link>
 
         <nav
@@ -152,30 +129,8 @@ const Header = ({location}: {location: Location}) => (
             //width: 'calc(100% / 4)',
             //},
           }}>
-          <Link
-            css={{
-              padding: '5px 10px',
-              whiteSpace: 'nowrap',
-              ...fonts.small,
-
-              ':hover': {
-                color: colors.brand,
-              },
-
-              ':focus': {
-                outline: 0,
-                backgroundColor: colors.lighter,
-                borderRadius: 15,
-              },
-
-              [media.lessThan('medium')]: {
-                display: 'none',
-              },
-            }}
-            to="/versions">
-            v{version}
-          </Link>
-          <Link
+        <div>
+            <Link
             css={{
               display: 'flex',
               alignItems: 'center',
@@ -193,8 +148,8 @@ const Header = ({location}: {location: Location}) => (
                 borderRadius: 15,
               },
             }}
-            to="/languages">
-            <LanguagesIcon />{' '}
+            to="xxx">
+            <img src="/icons8-phone.svg" alt="" height="24px" />{' '}
             <span
               css={{
                 marginLeft: '0.5rem',
@@ -203,13 +158,17 @@ const Header = ({location}: {location: Location}) => (
                   display: 'none',
                 },
               }}>
-              Languages
+              08225 7989 000<br />
+              Mo bis Fr 9-22 Uhr
             </span>
           </Link>
-          <a
+         </div>
+          <Link
             css={{
+              display: 'flex',
+              alignItems: 'center',
               padding: '5px 10px',
-              marginLeft: 10,
+              borderLeft: "1px solid #d9d9d9",
               whiteSpace: 'nowrap',
               ...fonts.small,
 
@@ -222,46 +181,25 @@ const Header = ({location}: {location: Location}) => (
                 backgroundColor: colors.lighter,
                 borderRadius: 15,
               },
-
-              [media.lessThan('large')]: {
-                display: 'none',
-              },
             }}
-            href="https://github.com/facebook/react/"
-            target="_blank"
-            rel="noopener">
-            GitHub
-            <ExternalLinkSvg
-              cssProps={{
-                marginLeft: 5,
-                verticalAlign: -2,
-                color: colors.subtle,
-              }}
-            />
-          </a>
-        </div>
+            to="/login">
+             <img src="/icons8-login.svg" alt="" height="24px" />{' '}
+            <span
+              css={{
+                marginLeft: '0.5rem',
+
+                [media.lessThan('medium')]: {
+                  display: 'none',
+                },
+              }}>
+              Anmelden
+            </span>
+          </Link>
       </div>
+        </div>
     </Container>
   </header>
 );
 
-const LanguagesIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24">
-    <path d="M0 0h24v24H0z" fill="none" />
-    <path
-      css={{fill: 'currentColor'}}
-      d="
-        M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5
-        7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09
-        5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62
-        7l1.62-4.33L19.12 17h-3.24z
-      "
-    />
-  </svg>
-);
 
 export default Header;
