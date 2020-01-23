@@ -122,7 +122,7 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
             },
           }}>
           <a
-            href="https://code.facebook.com/projects/"
+            href="https://klexhub.com"
             target="_blank"
             rel="noopener">
             <img
@@ -131,7 +131,7 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
                 maxWidth: 160,
                 height: 'auto',
               }}
-              src={ossLogoPng}
+              src="/oss_logo.png"
             />
           </a>
           <p
@@ -139,7 +139,7 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
               color: colors.subtleOnDark,
               paddingTop: 15,
             }}>
-            {`Copyright © ${new Date().getFullYear()} Facebook Inc.`}
+            {`© ${new Date().getFullYear()} KlexHub UG (haftungsbeschränkt)`}
           </p>
         </section>
       </div>

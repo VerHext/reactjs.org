@@ -50,7 +50,7 @@ class Home extends Component {
     return (
       <Layout location={location}>
         <TitleAndMetaTags
-          title="React &ndash; A JavaScript library for building user interfaces"
+          title="KlexHub &ndash; Software muss für Ihre Bedürfnisse entwickelt werden. "
           canonicalUrl={createCanonicalUrl('/')}
         />
         <div css={{width: '100%'}}>
@@ -111,7 +111,19 @@ class Home extends Component {
                         fontSize: 60,
                       },
                     }}>
-                    React
+                    Klex<span css={{
+                      color: "#1754f8",
+                      textAlign: 'center',
+                      margin: 0,
+                      fontSize: 45,
+                      letterSpacing: '0.01em',
+                      [media.size('xsmall')]: {
+                        fontSize: 30,
+                      },
+                      [media.greaterThan('xlarge')]: {
+                        fontSize: 60,
+                      },
+                    }}>Hub</span>
                   </h1>
                   <p
                     css={{
@@ -133,7 +145,8 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    A JavaScript library for building user interfaces
+                    Gute Software ist von echter Magie nicht zu unterscheiden.<br/>
+                    Wir realisieren Ihre Softwareprojekte durch den Einsatz neuster Technologien. 
                   </p>
                   <Flex
                     valign="center"
@@ -151,12 +164,12 @@ class Home extends Component {
                       <ButtonLink
                         to="/docs/getting-started.html"
                         type="primary">
-                        Get Started
+                        Angebot anfordern
                       </ButtonLink>
                     </CtaItem>
                     <CtaItem>
                       <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                        Take the Tutorial
+                        Mehr erfahren
                       </ButtonLink>
                     </CtaItem>
                   </Flex>
