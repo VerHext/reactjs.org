@@ -13,7 +13,7 @@ import hex2rgba from 'hex2rgba';
 
 const colors = {
   lighter: '#373940', // light blue
-  dark: '#282c34', // dark blue
+  dark: '#232F3E', // dark blue
   darker: '#20232a', // really dark blue
   brand: '#FE6C19', // electric blue
   brandLight: '#bbeffd',

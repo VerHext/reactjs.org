@@ -17,7 +17,7 @@ import {colors, media, sharedStyles} from 'theme';
 import loadScript from 'utils/loadScript';
 import createCanonicalUrl from 'utils/createCanonicalUrl';
 import {babelURL} from 'site-constants';
-import logoWhiteSvg from 'icons/logo-white.svg';
+import logoWhiteSvg from 'icons/KlexHub-white-only.png';
 
 class Home extends Component {
   state = {
@@ -50,7 +50,7 @@ class Home extends Component {
     return (
       <Layout location={location}>
         <TitleAndMetaTags
-          title="KlexHub &ndash; Software muss für Ihre Bedürfnisse entwickelt werden. "
+          title="KlexHub &ndash; Softwareentwicklung "
           canonicalUrl={createCanonicalUrl('/')}
         />
         <div css={{width: '100%'}}>
@@ -274,15 +274,11 @@ class Home extends Component {
                   {examples.edges.map(({node}, index) => {
                     const snippet = code[node.fileAbsolutePath];
                     return (
-                      <CodeExample
-                        key={index}
-                        id={snippet.id}
-                        code={snippet.code}
-                        containerNodeID={node.frontmatter.domid}
-                        loaded={babelLoaded}>
-                        <h3 css={headingStyles}>{node.frontmatter.title}</h3>
+                        <div>
+                         <h3 css={headingStyles}>{node.frontmatter.title}</h3>
+                         <img src={node.frontmatter.image} ></img>
                         <div dangerouslySetInnerHTML={{__html: node.html}} />
-                      </CodeExample>
+                        </div>
                     );
                   })}
                 </div>

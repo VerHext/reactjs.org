@@ -1,5 +1,5 @@
 items:
-  - title: Docs
+  - title: Info
     to: /docs/getting-started.html
     activeSelector: /docs/
   - title: Tutorial
