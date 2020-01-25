@@ -18,6 +18,8 @@ import loadScript from 'utils/loadScript';
 import createCanonicalUrl from 'utils/createCanonicalUrl';
 import {babelURL} from 'site-constants';
 import logoWhiteSvg from 'icons/KlexHub-white-only.png';
+import './App.css';
+
 
 class Home extends Component {
   state = {
@@ -48,6 +50,7 @@ class Home extends Component {
     }, {});
 
     return (
+
       <Layout location={location}>
         <TitleAndMetaTags
           title="KlexHub &ndash; Softwareentwicklung "
@@ -261,6 +264,8 @@ class Home extends Component {
                   ))}
                 </div>
               </section>
+
+
               <hr
                 css={{
                   height: 1,
@@ -269,22 +274,165 @@ class Home extends Component {
                   borderBottom: `1 solid ${colors.divider}`,
                 }}
               />
+              
+              
+              
+              
               <section css={sectionStyles}>
                 <div id="examples">
-                  {examples.edges.map(({node}, index) => {
-                    const snippet = code[node.fileAbsolutePath];
-                    return (
-                        <div>
-                         <h3 css={headingStyles}>{node.frontmatter.title}</h3>
-                         <img src={node.frontmatter.image} ></img>
-                        <div dangerouslySetInnerHTML={{__html: node.html}} />
+                    <section
+                        css={[
+                        sectionStyles,
+                        {
+                            [media.lessThan('medium')]: {
+                            marginTop: 0,
+                            marginBottom: 0,
+                            overflowX: 'auto',
+                            paddingTop: 30,
+                            WebkitOverflowScrolling: 'touch',
+                            position: 'relative',
+                            maskImage:
+                                'linear-gradient(to right, transparent, white 10px, white 90%, transparent)',
+                            },
+                        },
+                    ]}>
+
+                    {examples.edges.map(({node: column}, index) => (
+
+                        <div
+                            css={{
+                                display: 'flex',
+                                flexDirection: 'row',
+
+                                [media.lessThan('medium')]: {
+                                display: 'block',
+                                whiteSpace: 'nowrap',
+                                },
+                        }}>
+                                                  
+                        
+
+                                     <div
+                                        key={index}
+                                        className={index % 2 == 0 ? 'order0' : 'order2'}
+                                        css={{
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            flex: '1 0 30%',
+                            
+                                            marginLeft: 40,
+
+                                            '&:first-of-type': {
+                                            marginLeft: 0,
+
+                                            [media.lessThan('medium')]: {
+                                                marginLeft: 10,
+                                            },
+                                            },
+
+                                            [media.lessThan('medium')]: {
+                                            display: 'inline-block',
+                                            verticalAlign: 'top',
+                                            marginLeft: 0,
+                                            whiteSpace: 'normal',
+                                            width: '75%',
+                                            marginRight: 20,
+                                            paddingBottom: 40,
+
+                                            '&:first-of-type': {
+                                                marginTop: 0,
+                                            },
+                                            },
+                                        }}>
+                                    <h3
+                                            css={[
+                                            headingStyles,
+                                            {
+                                                '&&': {
+                                                // Make specificity higher than the site-wide h3 styles.
+                                                color: colors.subtle,
+                                                paddingTop: 0,
+                                                fontWeight: 300,
+                                                fontSize: 20,
+
+                                                [media.greaterThan('xlarge')]: {
+                                                    fontSize: 24,
+                                                },
+                                                },
+                                            },
+                                            ]}>
+                               
+                                        </h3>
+           
+                                         <img src={column.frontmatter.image} alt={column.frontmatter.title +  "-Image"}/>
+                                    </div>
+
+
+                                    <div
+                                        key={index}
+                                        css={[{
+                                            
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            flex: '1 0 70%',
+                                            order: 1,
+                                            marginLeft: 40,
+
+                                            '&:first-of-type': {
+                                            marginLeft: 0,
+
+                                            [media.lessThan('medium')]: {
+                                                marginLeft: 10,
+                                            },
+                                            },
+
+                                            [media.lessThan('medium')]: {
+                                            display: 'inline-block',
+                                            verticalAlign: 'top',
+                                            marginLeft: 0,
+                                            whiteSpace: 'normal',
+                                            width: '75%',
+                                            marginRight: 20,
+                                            paddingBottom: 40,
+
+                                            '&:first-of-type': {
+                                                marginTop: 0,
+                                            },
+                                            },
+                                        }]}>
+
+                                        <h3
+                                            css={[
+                                            headingStyles,
+                                            {
+                                                '&&': {
+                                                // Make specificity higher than the site-wide h3 styles.
+                                                color: colors.subtle,
+                                                paddingTop: 0,
+                                                fontWeight: 300,
+                                                fontSize: 20,
+
+                                                [media.greaterThan('xlarge')]: {
+                                                    fontSize: 24,
+                                                },
+                                                },
+                                            },
+                                            ]}>
+                                            {column.frontmatter.title}
+                                        </h3>
+                         
+                                        <div dangerouslySetInnerHTML={{__html: column.html}} />
+                                    </div>
+             
+
+                        
                         </div>
-                    );
-                  })}
+                    ))}
+                  </section>
                 </div>
-              </section>
-            </div>
-          </Container>
+            </section>
+        </div>
+    </Container>
 
           <section
             css={{
@@ -319,6 +467,8 @@ class Home extends Component {
     );
   }
 }
+
+
 
 Home.propTypes = {
   data: PropTypes.shape({
@@ -387,6 +537,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             domid
+            image
           }
           html
         }

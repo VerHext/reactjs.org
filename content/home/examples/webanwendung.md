@@ -2,7 +2,7 @@
 title: Webanwendungen
 order: 0
 domid: hello-example
-image: https://bootstrapstudio.io/assets/img/real_time_preview.jpg
+image: /images/06b4bf383b6e873a65ebf312e8316858.png
 ---
 
 Webanwendungen sind mehr als nur eine Webseite. Sie können Ihre kompletten Programme Gerätunabhängig über den Browser nutzen. 
